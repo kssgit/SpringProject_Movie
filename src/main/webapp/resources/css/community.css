@@ -1,0 +1,122 @@
+@charset "UTF-8";
+
+*{ margin:0; padding:0; }
+ #moviewrap{width:100%; height:100%; position:relative; }
+ 
+ /* background img */
+.main_bg{ width:100%; height:300px; z-index:-1000; position:absolute; }
+.main_bg > img{ width:100%; height:300px; background-repeat: no-repeat; }
+
+.m_list_bg{ width:100%; height:1000px; z-index:-1000; position:absolute; }
+.m_list_bg > img{ width:100%; height:100%; background-repeat: no-repeat; }
+
+.f_bg{ width:100%; height:200px; z-index:-1000; position:absolute; }
+.f_bg > img{ width:100%; height:100%; background-repeat: no-repeat; }
+
+
+/* header */
+#header{ width:100%; height:300px; position:absolute; }
+
+#header .gnb{ width:80%; height:40px; position:relative; margin:0 auto; }
+#header .gnb ul{ width:200px; float:right; list-style:none; }
+#header .gnb ul li{ float:right; margin-right:10px; }
+#header .gnb ul > li > a{ text-decoration:none; color:white; letter-spacing:2px; font-size:13px; }
+
+#header .nav{ width:80%; height:240px; position:relative; margin:10px auto; }
+#header .nav #nav_left{ width:180px; height:180px; position:absolute; margin:30px 4%; }
+#header .nav #nav_left > img{ width:180px; height:180px; }
+#header .nav #nav_right{ width:180px; height:180px; position:absolute; margin-left:82%; margin-top:40px; }
+#header .nav #nav_right > img{ width:220px; height:160px; }
+#header .nav > h2{ width:50%; height:70px; position:absolute; margin:30px 25%; }
+#header .nav > h2 > img{ width:100%; height:70px;   
+							animation: main_bg 0.7s linear infinite;
+							animation-iteration-count: 2;}
+@keyframes main_bg{
+    50% {opacity:0.2;}
+    100% {opacity:1;}
+}
+
+#header .nav ul{ width:60%; height:60px; list-style:none; position:absolute; margin-top:120px; margin-left:20%; }
+#header .nav ul > li{ float:left; width:25%; height:50px; text-align:center; line-height:80px; }
+#header .nav ul > li > a{ text-decoration:none; color:white; font-size:18px; font-weight:400px; letter-spacing:2px; text-shadow: 5px 5px 5px white, 0 0 120px purple, 0 0 5px maroon; }
+#header .nav ul > li > a:visited { text-decoration: none; }
+
+/* review table */
+
+.container{
+	border:1px solid black;
+	width:1100px;
+	top:300px;
+	margin:0px auto;
+	position : relative;
+	overflow: hidden;
+	border-radius: 30px;
+	background:  #cecece;
+	opacity:0.91;
+}
+
+.table{
+	margin-top:50px;
+	margin-left:50px;
+	margin-right:50px;
+}
+
+.table_head{
+	background:white;
+	border:1px solid black;
+	font-size: 14px;
+}
+.table_head th{
+	height:27px;
+	font-size: 14px;
+	border-radius: 7px;
+}
+.table_box{
+	background:white;
+	font-size: 14px;
+	margin-bottom: 7px;
+	border-right:none;
+}
+.table_box td{
+	height:70px;
+	border-radius: 7px;
+}
+
+.table_talk tr{
+	margin-bottom: 7px;
+}
+#starno{
+      text-shadow:
+       -1px -1px 0 black,
+       1px -1px 0 black,
+       -1px 1px 0 black,
+       1px 1px 0 black; 
+       text-decoration: none;
+       font-size:24px;
+       color: gray; 
+}
+#review_count{
+   font-size:19px;
+   font-weight: bold;
+   color: #8a5daa;
+}
+
+#review_movie_name{
+   font-size:14px;
+   font-weight: bold;
+   color: #510984;
+}
+
+
+
+
+/* footer */
+#footer{ width:100%; height:200px; position:absolute; margin-top:300px; }
+#footer .f_logo{ width:150px; height:150px; position:absolute; margin-top:-3px; }
+#footer .f_logo > img{ width:150px; height:150px; }
+
+#footer .f_txt{ width:50%; height:150px; position:relative; margin:25px auto; }
+#footer address{ width:100%; height:30px; position:absolute; margin:30px auto; text-align:center; color:white; }
+#footer .team1{ width:100%; height:30px; position:absolute; margin:60px auto; text-align:center; color:white; }
+#footer .team2{ width:100%; height:30px; position:absolute; margin:90px auto; text-align:center; color:white; }
+

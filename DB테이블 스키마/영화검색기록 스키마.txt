@@ -1,0 +1,24 @@
+--영화 검색 기록
+
+--시퀀스
+create sequence seq_queryRecord_idx;
+
+--테이블
+create table queryRecord(
+	idx NUMBER(3) primary key,
+	userId VARCHAR2(100), --유저아이디
+	queryContent VARCHAR2(200), --검색기록
+	queryDate VARCHAR2(200), --날짜
+	ip VARCHAR2(100) --ip
+);
+
+--샘플데이터
+insert into queryRecord values( 
+	seq_queryRecord_idx.nextVal,
+	'wooseong',
+	'아이언맨3',
+	sysdate,
+	'192.1.1.1'
+);
+
+commit;

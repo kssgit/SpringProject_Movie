@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ticket">
+	
+	<!-- 예약 정보 저장 -->
+	<insert id="saveticket" parameterType="vo.TicketVO">
+	insert into ticket values
+	(seq_ticket_idx.nextval ,#{m_name} ,#{id} , #{city}, #{district} ,TO_DATE(#{date_s}, 'MMDDYYYY'),#{time} ,#{seat} ,#{pay_money},#{seat_count} )
+	</insert>
+	
+	<!--회원 예약 정보 조회-->
+	<select id="selectticket" resultType="vo.TicketVO" parameterType="java.lang.String">
+		select * from ticket where id=#{id} 
+	</select>
+	
+	
+	
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+

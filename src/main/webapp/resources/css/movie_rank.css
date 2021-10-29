@@ -1,0 +1,50 @@
+@charset "UTF-8";
+
+#contents_rank_title{
+   position:absolute;
+   top:-10px;
+   left:20px;
+   font-size: 15px;
+   font-weight: bold;
+   color:white;
+}
+#contents_rank_title span{
+   color:red;
+}
+
+#loadingText{
+   position:absolute;
+   top:400px;
+   left:500px;
+   text-align: center;
+   color:white;
+}
+
+#contents_rank{
+   width:1100px;
+   position: relative;
+}
+
+#select_movie_list{
+   overflow: hidden;
+   width:100%; 
+   height:90%; 
+   position:relative; 
+   margin:30px 12%;
+}
+
+
+#movie_rank_box_one{
+   margin-top:20px;
+   margin-right:45px;
+   width:230px;
+   height:450px;
+   float:left;
+
+}
+
+
+
+.movie_rank_infos{
+   color:white;
+}

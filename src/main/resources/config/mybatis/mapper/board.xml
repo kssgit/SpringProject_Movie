@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="b">
+	
+
+	<!-- <select id="board_list" resultType="board" parameterType="java.lang.String">
+		select idx, m_name, id, ip, content, scope, to_char(regdate, 'yyyy/mm/dd') regdate from review
+		where m_name = #{m_name} order by idx desc
+	</select> -->
+	
+	<!-- 평점 평균 조회 (분자) -->
+	<select id="sum" resultType="int" parameterType="java.lang.String">
+		select NVL( sum(scope), 0) from review where m_name like '%'||#{m_name}||'%'
+	<!-- where m_name = #{m_name} -->
+	</select>
+	
+	<!-- 평균 분모 -->
+	<select id="num" resultType="int" parameterType="java.lang.String">
+		select NVL( count(*), 1) from review where m_name like '%'||#{m_name}||'%'
+	<!-- where m_name = #{m_name} -->
+	</select>
+	
+	<!-- 내 영화 조회 -->
+	<!-- <select id="user_m_name" resultType="String" parameterType="java.lang.String">
+		select distinct m_name from review where m_name = #{m_name}
+	
+	</select>  -->
+	
+	<!-- 리뷰 작성 -->
+	<insert id="board_insert" parameterType="board">
+		insert into review values(
+			seq_rev_idx.nextVal,
+			#{m_name},
+			#{id},
+			'192.1.8.2',
+			#{content},
+			#{scope},
+			sysdate)
+		<!-- insert into review values(
+			seq_rev_idx.nextVal,
+			#{m_name},
+			#{id},
+			#{ip},
+			#{content},
+			#{scope},
+			sysdate
+		) -->
+		
+	</insert>
+	
+	<!-- 회원별 리뷰 조회 -->
+	<select id="user_contnet" resultType="java.lang.String" parameterType="java.util.Map">
+		select m_name, id from review  where id=#{id} and m_name like '%'||#{m_name}||'%'
+	</select>
+	
+	<!-- 수정하기위해 내용 얻어오기 -->
+	<select id="board_modify" resultType="board" parameterType="java.util.Map">
+		select * from review where id = #{id} and m_name like '%'||#{m_name}||'%'
+	</select>
+	
+	<!-- 수정 업데이트 -->
+	<update id="board_update" parameterType="board">
+		update review set content=#{content}, scope=#{scope} where id=#{id} and m_name like '%'||#{m_name}||'%'
+	</update>
+	
+	<!-- 리뷰 삭제 -->
+	<delete id="board_delete" parameterType="java.util.Map">
+		delete from review where id=#{id} and m_name like '%'||#{m_name}||'%'
+	</delete>
+	
+	<!-- 페이지에 따른 게시물 조회 -->				<!-- 여기선 hashmap인지 map인지 확실히 해줘야 함! -->
+	<select id="board_list_condition" parameterType="java.util.Map" resultType="board">
+		select * from
+		(select rank() over(order by idx desc) no, r.*
+		from ( select idx, m_name, id, ip, content, scope, to_char(regdate, 'yyyy/mm/dd') regdate from review where m_name like '%'||#{m_name}||'%') r)
+		where no between #{start} and #{end}
+	</select>
+	
+	<!-- 페이지에 따른  전체 게시물 조회 -->	
+	<select id="board_list_total_condition" parameterType="java.util.Map" resultType="board">
+		select * from
+		(select rank() over(order by idx desc) no, r.*
+		from ( select idx, m_name, id, ip, content, scope, to_char(regdate, 'yyyy/mm/dd') regdate from review) r)
+		where no between #{start} and #{end}
+
+	</select>
+	
+	<!-- 해당 영화 게시물 수 조회 -->
+	<select id="board_count" resultType="int" parameterType="java.lang.String">
+		select count(*) from review where m_name like '%'||#{m_name}||'%'
+	</select>
+	
+	<!-- 전체 게시물 수 조회 -->
+	<select id="board_total_count" resultType="int">
+		select count(*) from review
+	</select>
+	
+
+	
+	<select id="board_myreviews" resultType="board" parameterType="java.lang.String">
+		select * from review where id = #{id}
+	</select>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="t">
+	<!-- 해당 영화 상영 지역 검색 -->
+	<select id="selectcity" resultType="theater" parameterType="java.lang.String">
+		select distinct city from theater where m_name=#{m_name} and time > sysdate
+	</select>
+	
+	<!--해당 영화 상영 구검색  -->
+	<select id="selectdistrict" resultType="theater" parameterType="java.util.Map">
+		select distinct district from theater where m_name=#{m_name} and city=#{city} and time > sysdate
+	</select>
+	
+	<!-- 영화 상영 날짜 검색 -->
+	<select id="selectdate" resultType="vo.DateVO" parameterType="java.util.Map">
+		select to_char(max(date_s),'mm') max_month,to_char(max(date_s),'dd') max_date, to_char(min(date_s),'mm') min_month, to_char(min(date_s),'dd') min_date,(max(date_s)-min(date_s)) date_o, to_char(min(date_s),'day') day from theater 
+		where m_name=#{m_name} and city=#{city} and district=#{district} and time > sysdate
+	</select>
+	
+	<!-- 영화 상영 시간 및 남은 좌석수  검색  -->
+	<select id="selectTime" resultType="theater" parameterType="java.util.Map">
+		select time ,seat_total from theater 
+		where m_name=#{m_name} and city=#{city} and district=#{district} and date_s=TO_DATE(#{date_s}, 'MMDDYYYY') and SEAT_TOTAL >0 and time > sysdate
+	</select>
+	
+
+	<!-- 좌석수 줄이기  -->
+	<update id="seatchange" parameterType="java.util.Map">
+		update theater set seat_total=seat_total - #{count} where m_name=#{m_name} and city=#{city} and district=#{district} and date_s=TO_DATE(#{date_s}, 'MMDDYYYY') and time=TO_DATE(#{time}, 'yyyy-mm-dd hh24:mi:ss')
+	</update>
+	
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+

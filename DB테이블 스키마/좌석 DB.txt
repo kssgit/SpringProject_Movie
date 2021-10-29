@@ -1,0 +1,16 @@
+--좌석 DB
+
+--시퀀스
+create sequence SEQ_SEAT_IDX;
+
+--테이블
+create table seat(
+	S_IDX number,
+	M_NAME varchar2(100),
+	id varchar2(100),
+	city varchar2(100),
+	district varchar2(100),
+	date_s date,
+	time varchar2(100),
+	seat varchar2(100)
+);

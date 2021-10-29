@@ -1,0 +1,39 @@
+리뷰 DB
+
+--시퀀스 
+create sequence seq_rev_idx;
+
+
+--테이블
+
+create table review(
+	idx number primary key,--리뷰번호
+	m_name varchar2(100),--영화이름
+	id varchar2(100) not null,--회원ID
+	ip varchar2(100),--IP
+	content varchar2(200) not null,--리뷰내용
+	scope number(10),--별점
+	regdate date DEFAULT SYSDATE--작성일자
+);
+
+--샘플데이터
+insert into review values( seq_rev_idx.nextVal,
+			'런 보이 런',
+			'yujin',
+			'191.111.0.0.1',
+			'재밌어요ㅇㅇㅇㅇㅇ
+ㅇㅇㅇㅇㅇ
+ㅇㅇㅇ',
+			'5',
+			sysdate
+);
+
+
+insert into review values( seq_rev_idx.nextVal,
+			'인셉션',
+			'yuyu',
+			'191.111.0.0.1',
+			'노잼',
+			'3',
+			sysdate
+);

@@ -1,0 +1,166 @@
+--영화 포스터 갤러리
+
+--시퀀스
+create sequence seq_moviePoster_idx;
+
+--테이블
+create table moviePoster(
+	idx NUMBER(3) primary key,
+	movieNm VARCHAR2(100), --영화제목
+	posterNm VARCHAR2(100), --영화포스터
+	trailerSrc VARCHAR2(200) --영화예고편
+);
+
+--데이터
+insert into moviePoster values( seq_moviePoster_idx.nextVal,
+			'위대한 쇼맨',
+			'http://file.koreafilm.or.kr/thm/02/00/05/56/tn_DPF020569.jpg',
+			'https://www.youtube.com/embed/cnIOq6P8PUU'
+);
+
+insert into moviePoster values( seq_moviePoster_idx.nextVal,
+			'프리즌 이스케이프',
+			'http://file.koreafilm.or.kr/thm/02/00/05/55/tn_DPF020458.jpg',
+			'https://www.youtube.com/embed/KYXPiPohZw0'
+);
+
+insert into moviePoster values( seq_moviePoster_idx.nextVal,
+			'카페 벨에포크',
+			'http://file.koreafilm.or.kr/thm/02/00/05/54/tn_DPF020454.jpg',
+			'https://www.youtube.com/embed/HRf5kRhfKrM'
+);
+
+insert into moviePoster values( seq_moviePoster_idx.nextVal,
+			'더 플랫폼',
+			'http://file.koreafilm.or.kr/thm/02/00/05/55/tn_DPF020512.jpg',
+			'https://www.youtube.com/embed/yDvPnTGS-Js'
+);
+
+insert into moviePoster values( seq_moviePoster_idx.nextVal,
+			'킬러의 보디가드 무삭제 특별판',
+			'http://file.koreafilm.or.kr/thm/02/00/05/53/tn_DPF020386.jpg',
+			'https://www.youtube.com/embed/s0K5mlv5x4U'
+);
+
+insert into moviePoster values( seq_moviePoster_idx.nextVal,
+			'패왕별희 디 오리지널',
+			'http://file.koreafilm.or.kr/thm/02/00/05/50/tn_DPF020243.jpg',
+			'https://www.youtube.com/embed/BFheUkT41Lc'
+);
+
+insert into moviePoster values( seq_moviePoster_idx.nextVal,
+			'톰보이',
+			'http://file.koreafilm.or.kr/thm/02/00/05/54/tn_DPF020411.jpg',
+			'https://www.youtube.com/embed/iAKApms7jJk'
+);
+
+insert into moviePoster values( seq_moviePoster_idx.nextVal,
+			'콜 오브 와일드',
+			'http://file.koreafilm.or.kr/thm/02/00/05/54/tn_DPF020456.jpg',
+			'https://www.youtube.com/embed/mXLIuykqBA8'
+);
+
+insert into moviePoster values( seq_moviePoster_idx.nextVal,
+			'라스트 풀 메저',
+			'http://file.koreafilm.or.kr/thm/02/00/05/55/tn_DPF020490.jpg',
+			'https://www.youtube.com/embed/J8gr6KaUppQ'
+);
+
+insert into moviePoster values( seq_moviePoster_idx.nextVal,
+			'날씨의 아이',
+			'http://file.koreafilm.or.kr/thm/02/00/05/56/tn_DPF020530.jpg',
+			'https://www.youtube.com/embed/ILQl1Q4jizc'
+);
+------------------------------------- 추가 ---------------------------------------------
+insert into moviePoster values( seq_moviePoster_idx.nextVal,
+			'언더워터',
+			'http://file.koreafilm.or.kr/thm/02/00/05/56/tn_DPF020546.jpg',
+			'https://www.youtube.com/embed/wZbarzxnvJo'
+);
+
+insert into moviePoster values( seq_moviePoster_idx.nextVal,
+			'그집',
+			'http://file.koreafilm.or.kr/thm/02/00/05/56/tn_DPF020540.jpg',
+			'https://www.youtube.com/embed/8YXw0e5DIzo'
+);
+
+insert into moviePoster values( seq_moviePoster_idx.nextVal,
+			'미스비헤이비어',
+			'http://file.koreafilm.or.kr/thm/02/00/05/55/tn_DPF020464.jpg',
+			'https://www.youtube.com/embed/Zg3wm2ELgvA'
+);
+
+insert into moviePoster values( seq_moviePoster_idx.nextVal,
+			'아홉 스님',
+			'http://file.koreafilm.or.kr/thm/02/00/05/56/tn_DPA001088.jpg',
+			'https://www.youtube.com/embed/65GbcNIcYVU'
+);
+
+insert into moviePoster values( seq_moviePoster_idx.nextVal,
+			'초미의 관심사',
+			'http://file.koreafilm.or.kr/thm/02/00/05/54/tn_DPK015731.jpg',
+			'https://www.youtube.com/embed/-IDCk30ig9w'
+);
+
+
+-------------------------------------추가-------------------------------------------------
+insert into moviePoster values( seq_moviePoster_idx.nextVal,
+			'조금씩, 천천히 안녕',
+			'http://file.koreafilm.or.kr/thm/02/00/05/55/tn_DPF020465.jpg',
+			'https://www.youtube.com/embed/fpulOH5VEnI'
+);
+
+
+----------------------------------20 06 06 추가--------------------------------------------
+insert into moviePoster values( seq_moviePoster_idx.nextVal,
+			'침입자',
+			'http://file.koreafilm.or.kr/thm/02/00/05/46/tn_DPK015417.jpg',
+			'https://www.youtube.com/embed/i9Lr9Z9HROY'
+);
+
+insert into moviePoster values( seq_moviePoster_idx.nextVal,
+			'프랑스여자',
+			'http://file.koreafilm.or.kr/thm/02/00/05/55/tn_DPK015756.jpg',
+			'https://www.youtube.com/embed/kme5phjZeIUI'
+);
+
+insert into moviePoster values( seq_moviePoster_idx.nextVal,
+			'매드 맥스: 분노의 도로',
+			'http://file.koreafilm.or.kr/thm/02/00/05/56/tn_DPF020545.jpg',
+			'https://www.youtube.com/embed/p-fDEhVBnv4'
+);
+
+insert into moviePoster values( seq_moviePoster_idx.nextVal,
+			'결백',
+			'http://file.koreafilm.or.kr/thm/02/00/05/45/tn_DPK015409.jpg',
+			'https://www.youtube.com/embed/5QWeKTO9NpY'
+);
+
+insert into moviePoster values( seq_moviePoster_idx.nextVal,
+			'라이프 오브 파이',
+			'http://file.koreafilm.or.kr/thm/02/00/01/81/tn_DPF003138.JPG',
+			'https://www.youtube.com/embed/JlZV4Ietg5M'
+);
+
+insert into moviePoster values( seq_moviePoster_idx.nextVal,
+			'슈퍼스타 뚜루',
+			'http://file.koreafilm.or.kr/thm/02/00/05/44/tn_DPF019892.jpg',
+			'https://www.youtube.com/embed/iacn6r8poC8'
+);
+
+commit;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

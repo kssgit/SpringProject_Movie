@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="u">
+	
+	<!-- 회원가입 DB 입력 -->
+	<insert id="register_member" parameterType="user">
+		insert into login values( seq_login_idx.nextVal, #{id}, #{pwd}, #{tell}, #{name}, #{email}, #{postcode}, #{addr}, #{d_addr}, #{ex_addr} )
+	</insert>
+	
+	<!-- 회원가입 (아이디 중복체크) -->
+	<select id="id_check" parameterType="String" resultType="int">
+		select count(*) from login where id=#{id}
+	</select>
+	
+	<!-- 회원가입 (이메일 중복체크) -->
+	<select id="check_email" parameterType="String" resultType="int">
+		select count(*) from login where email=#{email}
+	</select>	
+	
+	<!-- 로그인할 id정보 조회 -->
+	<select id="user_one" parameterType="java.util.HashMap" resultType="user">
+		select * from login where id=#{id} and pwd=#{pwd}
+	</select>
+	
+	<!-- id 찾기 -->
+	<select id="find_id" parameterType="java.util.HashMap" resultType="user">
+		select id from login where name=#{name} and email=#{email}
+	</select>
+	
+	<!-- pwd 찾을 해당 id 조회 -->
+	<select id="check_id" parameterType="java.util.HashMap" resultType="user">
+		select * from login where id=#{id} and email=#{email}
+	</select>
+	
+	<!-- 로그인한 회원정보 조회 -->
+	<select id="select_one" parameterType="int" resultType="user">
+		select * from login where l_idx=#{l_idx}
+	</select>
+	
+	<!-- 회원정보 수정 -->
+	<update id="change_user_info" parameterType="user">
+		update login set id=#{id}, tell=#{tell}, name=#{name}, email=#{email}, postcode=#{postcode}, addr=#{addr}, d_addr=#{d_addr}, ex_addr=#{ex_addr} where l_idx=#{l_idx}
+	</update>
+	
+	<!-- 수정한 회원정보 다시 가져오기 -->
+	<select id="call_changed_info" parameterType="int" resultType="user">
+		select * from login where l_idx=#{l_idx}
+	</select>
+	
+	<!-- 비밀번호 찾기 (비밀번호 재설정) -->
+	<update id="change_pwd" parameterType="user">
+		update login set pwd=#{pwd} where l_idx=#{l_idx}
+	</update>
+	
+	<!-- 회원탈퇴 (회원정보 삭제) -->
+	<delete id="delete_info" parameterType="java.util.HashMap">
+		delete from login where l_idx=#{l_idx} and pwd=#{input_pwd}
+	</delete>
+	
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+

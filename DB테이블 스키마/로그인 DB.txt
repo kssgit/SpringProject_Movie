@@ -1,0 +1,22 @@
+--로그인 DB
+
+--시퀀스
+Create sequence seq_login_idx;
+
+create table login(
+	l_idx number primary key,--회원 번호
+	id varchar2(100) not null unique,--회원ID
+	pwd varchar2(100) not null,--비번
+	tell varchar2(20) not null,--전화번호
+	name varchar2(100) not null,
+	email varchar2(100) not null, 
+	postcode varchar2(10),
+	addr varchar2(100),--주소
+	d_addr varchar2(100), --상세 주소
+	ex_addr varchar2(100) --추가 주소
+);
+
+insert into login values(seq_login_idx.nextVal, 'one', '1111', '010-1111-1111', '마루치', 'pwk2380@gmail.com', '12345', '서울시 마포구', '111호', '용강동');
+commit;
+
+

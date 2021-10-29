@@ -1,0 +1,21 @@
+--예매 DB
+
+--시퀀스
+create sequence seq_ticket_idx;
+
+--테이블
+create table ticket(
+	t_idx number primary key,--예매번호
+	m_name varchar2(100) not null,--영화이름
+	id varchar2(100),--예매회원ID(forignkey)
+	city varchar2(100),--상영지역
+	district varchar2(100),--각 지역별 위치
+	date_s date,--상영날짜
+	time varchar2(100),--상영시간
+	seat varchar2(500),--좌석 번호
+	pay_money varchar2(100),--결재금액
+	seat_count number--몇자리예매	
+);
+
+
+

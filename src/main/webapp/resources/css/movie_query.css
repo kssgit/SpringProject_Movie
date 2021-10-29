@@ -1,0 +1,153 @@
+@charset "UTF-8";
+
+#contents_query{
+	position: relative;
+}
+
+#searchText{
+	color:white;
+}
+
+#recent_query_box{
+	color:white;
+	display: inline;
+}
+#recent_query_title{
+	display: inline;
+}
+#recent_querys{
+	z-index:3;
+	display: inline;
+}
+#recent_querys > form{
+	margin:10px;
+	display:inline;
+}
+
+#recent_query_box > a{
+	margin:5px;
+	display: inline;
+}
+
+#contents_query{
+	position:relative;
+	height:400px;
+}
+
+#question_box{
+	position:absolute;
+	top:130px;
+	left:25%;
+}
+#query_input_box{
+	text-align:center;
+    cursor: text;
+}
+
+#query_input_box div{
+	margin:30px;
+}
+
+
+#MagnifyingGlas{
+	width:15px;
+	height:15px;
+	
+}
+
+#query_input_box > input{
+	bottom: 0;
+    box-sizing: border-box;
+    left: 0;
+    margin: 0;
+    padding-inline-start: 20px;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+#query_widnow{
+	width:500px;
+	height:40px;
+	border:1px solid #f1f1f1;
+	border-radius:15px;
+	box-shadow: 2px 2px 2px grey;
+	line-height:2px;
+	background: white;
+	padding-top:5px;
+}
+
+#query{
+	width:380px;
+	height:35px; 
+}
+#query:focus {
+	outline:none;
+}
+
+#btn {
+    width:60px;
+    background-color: #333333;
+    border: none;
+    color:#fff;
+    padding: 5px 0;
+    text-align: center;
+    text-decoration: none;
+    font-size: 12px;
+    margin: 1px;
+    cursor: pointer;
+	border-radius:5px;
+}
+
+#btn:hover {
+    background-color: #121212;
+}
+
+#query_icon{
+	width:15px;
+	height: 15px;
+}
+
+#recent_querys a{
+	color:white;
+}
+
+#recent_querys img{
+	position:absolute;
+	left:0px;
+	top:0px;
+	display:none;
+}
+
+#del_img_box{
+	position:relative;
+	display:inline;
+}
+
+#movie_query_list_container{
+	margin-top:170px;
+	width:1080px;
+	float:left;
+	position: relative;
+	overflow: hidden;
+}
+
+#movie_query_list > li > div{
+	margin: 20px;
+	width:220px;
+	height:450px;
+	color:white;
+	float:left;
+	display:none;
+	text-align: center;
+}
+
+.movie_query_rel_run div{
+	display:inline;
+}
+
+.movie_query_rel{
+	border-right:1px solid #f1f1f1;
+	margin-right: 8px;
+}
+   
